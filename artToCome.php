@@ -19,17 +19,13 @@
             foreach(self::HOOKS as $hook) {
                 $this->addHook($hook, $hook);
             }
-			
-			
-
-			
         }
 		
- public function plxShowNextArtList() {
+ 	public function plxShowNextArtList() {
 			
             echo self::BEGIN_CODE;
 ?>		
-		$format = '<li><time>#art_date</time>:&nbsp;#art_title</li>';
+		$format = '<li><time>#art_date</time>:&nbsp;#art_title  </li>';
 		$max = 5;
 		$cat_id = '';
 		$ending = '';
@@ -70,6 +66,7 @@
         # Nouvel objet plxGlob et récupération des fichiers
         $plxGlob_arts = clone $plxShow->plxMotor->plxGlob_arts;
         if ($aFiles = $plxGlob_arts->query($motif, 'art', $sort, 0, $max, 'after')) {
+			echo '<div id="boxNextArts"<h3><?php $this->lang('L_NEXT_ARTICLE')?></h3><ul>';
             foreach ($aFiles as $v) { # On parcourt tous les fichiers
                 $art = $plxShow->plxMotor->parseArticle(PLX_ROOT . $plxShow->plxMotor->aConf['racine_articles'] . $v);
                 $num = intval($art['numero']);
@@ -122,15 +119,13 @@
                 eval($plxShow->plxMotor->plxPlugins->callHook('plxShowLastArtListContent'));
 
                 # On genère notre ligne
-                echo '<div class="boxArts"><h3><?php $this->lang('L_NEXT_ARTICLE')?></h3><ul>'.$row.'</ul></div>';
+                echo $row.PHP_EOL;
             }
+			echo '</ul></div>';
         }
  
 <?php
-            echo self::END_CODE;						
-        }		
-		
-		
-		
+            	echo self::END_CODE;						
+        	}		
 	}
 	?>
