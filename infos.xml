@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+   <title>ArtToCome</title>
+   <author>GC-nomade</author>
+   <version>0.0.1</version>
+   <date>28/03/2023</date>
+    <site>http://re7net.com</site>
+    <repository>https://github.com/gcyrillus</repository>
+   <description>Clone de la fonction lastArtList() pour ne selectionner que les articles à la date courante ou futur</description> 
+   <scope>site</scope>
+</document>
