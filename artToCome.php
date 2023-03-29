@@ -122,7 +122,7 @@
                 eval($plxShow->plxMotor->plxPlugins->callHook('plxShowLastArtListContent'));
 
                 # On genère notre ligne
-                echo '<ul>'.$row.'</ul>';
+                echo '<div class="boxArts"><h3><?php $this->lang('L_NEXT_ARTICLE')?></h3><ul>'.$row.'</ul></div>';
             }
         }
  
