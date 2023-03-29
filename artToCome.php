@@ -29,7 +29,7 @@
 			
             echo self::BEGIN_CODE;
 ?>		
-		$format = '<li>#art_title</li>';
+		$format = '<li><time>#art_date</time>:&nbsp;#art_title</li>';
 		$max = 5;
 		$cat_id = '';
 		$ending = '';
