@@ -66,7 +66,7 @@
         # Nouvel objet plxGlob et récupération des fichiers
         $plxGlob_arts = clone $plxShow->plxMotor->plxGlob_arts;
         if ($aFiles = $plxGlob_arts->query($motif, 'art', $sort, 0, $max, 'after')) {
-			echo '<div id="boxNextArts"<h3><?php $this->lang('L_NEXT_ARTICLE')?></h3><ul>';
+			echo '<div id="boxNextArts"><h3><?php $this->lang('L_NEXT_ARTICLE')?></h3><ul>';
             foreach ($aFiles as $v) { # On parcourt tous les fichiers
                 $art = $plxShow->plxMotor->parseArticle(PLX_ROOT . $plxShow->plxMotor->aConf['racine_articles'] . $v);
                 $num = intval($art['numero']);
